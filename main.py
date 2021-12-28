@@ -120,8 +120,8 @@ def predict():
         print(date)
         print(type(date))
 
-        access_key_id = config.ACCESS_KEY_ID
-        secret_access_key = config.ACCESS_SECRET_KEY
+        access_key_id = 'AKIA2U5J5V6SNJJ7WZTH'
+        secret_access_key = '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'
 
         def put_data(a, b, c, d, e, f, g, h, i, j, k, l, m, dynamodb=None):
             if not dynamodb:
@@ -186,4 +186,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(port=8001, debug=True)
+    app.run(port=8080, debug=True)
