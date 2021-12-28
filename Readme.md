@@ -34,7 +34,7 @@ then to identify the optimal strategy for inventorying products with high backor
 Heroku:- https://dashboard.heroku.com/apps/back-order-pred
 
 
-AWS- Elastic Beanstalk:- 
+AWS- Elastic Beanstalk:- http://backorder-env.eba-kr5v6w2h.us-east-1.elasticbeanstalk.com/ ("available for 4 hours only")
 
 ![elastic beanstalk](https://i.imgur.com/VRg18nK.gif)
 
@@ -71,9 +71,7 @@ Our next step would be to follow the instruction given on
 [Heroku Documentation](https://devcenter.heroku.com/articles/getting-started-with-python) to deploy a web app.
 
 ### AWS(Amazon Web Services)
-Login or signup with free tier in order to create virtual amchine(Elastic beanstack) for free. 
-Note:- In free trier virtual Machine will only give free service for 720hr almost a month after that you will be charged , so use carefully. 
-I usally stop instance when it is not needed to avoid extra charge. so it may happen that deployment link for AWS might not work  
+As we have deployed this application in Amazon elastic beanstalk with free tieraccount , To avoid unwanted chargers so this elastic beanstalk will only be working for 4 hr from now and it will be terminated to avoid extra charges
 ![](https://i.imgur.com/XMFtzYH.png)[![](https://i.imgur.com/cGvkZxw.png)](https://heroku.com)
 
 Our next step would be to follow the instruction given on 
