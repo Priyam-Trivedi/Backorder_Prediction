@@ -1,5 +1,3 @@
-# importing required packages
-
 from flask import Flask, render_template, request, abort
 import boto3
 import json
@@ -9,7 +7,6 @@ import sklearn
 import numpy as np
 import logging
 import os
-import config
 # import pymongo
 
 # configuring logging method
@@ -20,7 +17,7 @@ logging.basicConfig(filename='info.txt',
                     datefmt='%Y-%m-%d %H:%M-%S')
 
 # Load the decision tree model
-model = pickle.load(open('Tuned_DT_Back_order.pkl', 'rb'))
+model = pickle.load(open('RF_Back_order.pkl', 'rb'))
 
 
 app = Flask(__name__)
@@ -120,8 +117,8 @@ def predict():
         print(date)
         print(type(date))
 
-        access_key_id = 'AKIA2U5J5V6SNJJ7WZTH'
-        secret_access_key = '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'
+        ACCESS_KEY_ID='AKIA22RZQ66GYDG6QPV4'
+        ACCESS_SECRET_KEY='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'
 
         def put_data(a, b, c, d, e, f, g, h, i, j, k, l, m, dynamodb=None):
             if not dynamodb:
@@ -164,15 +161,15 @@ def predict():
     logging.info("successfully predicted")
 
     try:
-        access_key='AKIA2U5J5V6SNJJ7WZTH'
-        secret_access_key='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'
+        access_key='AKIA22RZQ66GYDG6QPV4'
+        secret_access_key='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'
         client = boto3.client('s3',
                             aws_access_key_id = access_key,
                             aws_secret_access_key = secret_access_key)
 
         for file in os.listdir():
             if 'info.txt' in file:
-                upload_file_bucket = 'back-order-732111417252'
+                upload_file_bucket = 'backorderpred'
                 upload_file_key = 'logfile/' + str(file)
                 client.upload_file(file, upload_file_bucket, upload_file_key, ExtraArgs={'ACL': 'public-read'})
         
@@ -186,4 +183,5 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(port=8080, debug=True)
+    app.run(port=8001, debug=True)
+
